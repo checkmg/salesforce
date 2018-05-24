@@ -1,5 +1,5 @@
 # salesforce
-Salesforce RESTful and BULK Job Sample
+Salesforce RESTful and BULK Job Examples
 
 Pre Req:
 ---------
