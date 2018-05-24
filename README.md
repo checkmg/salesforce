@@ -19,6 +19,8 @@ SF_LIGHTNING_TOKEN=<TODO: Your SF TOKEN>
 SF_LIGHTNING_BATCH_ASYNC_URL=<TODO: Your SF Orgs Async URL>
 SF_LIGHTNING_SOBJECT_URL=<TODO: Your SF Orgs Sobjects URL>
 
+Tests:
+------
 RESTful Integrations Tests: com.sf.sforce.SalesforceRestIntegrationTest
 
 Bulk Operation Tests: com.sf.sforce.batch.SalesforceBulkBatchTest
