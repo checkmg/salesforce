@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="300 seconds" >
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+                    <pattern>%d{HH:mm:ss.SSS} [t:%thread a:%X{aid}] [%level] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="applogfile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <file>${CATALINA_BASE}/logs/application.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${CATALINA_BASE}/logs/application.%d{yyyy-MM-dd}.log
+			</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{HH:mm:ss.SSS} [t:%thread a:%X{aid}] [%level] %logger{36} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+	<logger name="com.sf">
+		<level value="DEBUG" />
+	</logger>
+
+    <logger name="com.sforce">
+        <level value="INFO" />
+    </logger>
+
+	<logger name="org.hibernate.type" level="INFO" />
+  	<logger name="org.hibernate" level="INFO" />
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
